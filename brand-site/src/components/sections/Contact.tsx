@@ -1,68 +1,24 @@
-import { useState } from "react";
-
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const data = {
-      name,
-      email,
-      message,
-    };
-
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (!res.ok) throw new Error("Error en la petición");
-
-      alert("Mensaje enviado 🚀");
-
-      // limpiar formulario
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch (err) {
-      console.error(err);
-      alert("Error enviando mensaje");
-    }
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Nombre"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        required
-      />
+    <section id="contacto" className="py-20 px-6 text-center">
+      <h2 className="text-3xl font-bold mb-6 text-yellow-400">
+        Contáctanos
+      </h2>
+
+      <p className="text-gray-400 mb-6">
+        Estamos listos para ayudarte.
+      </p>
 
       <input
-        type="email"
-        placeholder="Correo"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
+        placeholder="Tu correo"
+        className="px-4 py-2 rounded-lg text-black mb-4"
       />
 
-      <textarea
-        placeholder="Mensaje"
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        required
-      />
+      <br />
 
-      <button type="submit">Enviar</button>
-    </form>
+      <button className="bg-orange-500 px-6 py-2 rounded-lg text-black font-semibold">
+        Enviar
+      </button>
+    </section>
   );
 }

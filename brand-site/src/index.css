@@ -1,58 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@theme inline {
-  --color-primary:            hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-accent:             hsl(var(--accent));
-  --color-accent-foreground:  hsl(var(--accent-foreground));
-  --color-background:         hsl(var(--background));
-  --color-foreground:         hsl(var(--foreground));
-  --color-muted:              hsl(var(--muted));
-  --color-muted-foreground:   hsl(var(--muted-foreground));
-  --color-border:             hsl(var(--border));
-  --color-card:               hsl(var(--card));
-  --color-card-foreground:    hsl(var(--card-foreground));
-  --font-sans:    'Inter', sans-serif;
-  --font-display: 'Plus Jakarta Sans', sans-serif;
-  --radius-lg: var(--radius);
-}
-
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
-  --primary: 222 47% 15%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222 47% 11%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
-  --accent: 38 92% 50%;
-  --accent-foreground: 222 47% 11%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 222 47% 15%;
-  --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
-  --radius: 0.75rem;
+  --primary: 20 100% 50%;
+  --accent: 45 100% 50%;
 }
 
-@layer utilities {
-  .glass-nav {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  }
-
-  .text-gradient {
-    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary) / 0.8), hsl(var(--accent)));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0a;
+  color: #ffffff;
 }

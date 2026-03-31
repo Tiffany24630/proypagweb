@@ -1,26 +1,9 @@
 import * as React from "react";
 
-type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: "default" | "outline";
-};
-
-export function Button({
-  children,
-  variant = "default",
-  className = "",
-  ...props
-}: ButtonProps) {
-  const base =
-    "inline-flex items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition";
-
-  const variants = {
-    default: "bg-black text-white hover:bg-black/80",
-    outline: "border border-gray-300 text-black hover:bg-gray-100",
-  };
-
+export function Button({ children, className = "", ...props }: any) {
   return (
     <button
-      className={`${base} ${variants[variant]} ${className}`}
+      className={`px-6 py-3 rounded-full font-semibold bg-gradient-to-r from-orange-500 to-yellow-400 text-black shadow-lg hover:scale-105 transition ${className}`}
       {...props}
     >
       {children}
